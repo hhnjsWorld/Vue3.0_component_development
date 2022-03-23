@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.0-beta.7/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="cli">
+        <global/>
+    </div>
+    <div id="app">
+        <local/>
+    </div>
+    <script>
+        /* 全局和局部对比 */
+
+
+        /* 全局 */
+        const cli = Vue.createApp({})
+        cli.component('global', {
+            data() {
+                return {
+                    title: '全局',
+                }
+            },
+            template: `
+                <div>{{title}}</div>
+                `
+        })
+        cli.mount('#cli')
+
+
+
+        /* 局部 */
+        const todo = {
+            data() {
+                return {
+                    title: '局部'
+                }
+            },
+            template: `
+            <div>{{title}}</div>
+            `
+        }
+        const app = Vue.createApp({
+            components: {
+                local: todo
+            }
+        })
+
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

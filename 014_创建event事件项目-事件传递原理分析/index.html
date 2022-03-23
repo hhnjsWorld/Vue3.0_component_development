@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    #content {
+        width: 100%;
+        height: 23vh;
+        border: 1px solid green;
+    }
+    
+    .nav {
+        width: 100%;
+        /* border: 1px solid grey; */
+        height: 3vh;
+        background-color: #E3E4E5;
+    }
+    
+    .nav .center {
+        white-space: nowrap;
+        color: #999999;
+        margin: auto;
+        border: 1px seagreen solid;
+        width: 65%;
+        height: 100%;
+        font-size: 12px;
+        line-height: 25px;
+    }
+    
+    .nav-ul {
+        display: flex;
+    }
+    
+    .spacer {
+        margin: 6px 5px 0;
+        width: 1px;
+        height: 10px;
+        background-color: #ccc;
+    }
+    
+    .nav-ul li:nth-child(1) {
+        flex: 3;
+    }
+    
+    .nav-ul li:not(:first-child) {
+        text-align: center;
+        flex: 1;
+        transform: scale(0.9);
+    }
+    
+    .header {
+        border: 1px solid rgb(112, 32, 32);
+        height: 15vh;
+    }
+    
+    .header .center {
+        margin: auto;
+        border: 1px rgb(12, 12, 10) solid;
+        width: 65%;
+        height: 100%;
+    }
+</style>
+
+
+<body>
+    <div id="content">
+        <div class="nav">
+            <div class="center">
+                <ul class="nav-ul">
+                    <li><i>1</i>江苏</li>
+                    <i class="spacer"></i>
+                    <li>你好,请登陆 <span style="color: red;">免费注册</span></li>
+                    <i class="spacer"></i>
+                    <li>我的订单</li>
+                    <i class="spacer"></i>
+                    <li>我的京东</li>
+                    <i class="spacer"></i>
+                    <li>京东会员</li>
+                    <i class="spacer"></i>
+                    <li style="color:red">企业采购</li>
+                    <i class="spacer"></i>
+                    <li>客户服务</li>
+                    <i class="spacer"></i>
+                    <li>网站导航</li>
+                    <i class="spacer"></i>
+                    <li>手机京东</li>
+                    <i class="spacer"></i>
+                    <li>网站无障碍</li>
+                </ul>
+            </div>
+        </div>
+        <div class="header">
+            <div class="center"></div>
+        </div>
+    </div>
+</body>
+
+</html>

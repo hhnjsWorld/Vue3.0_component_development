@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.0-beta.7/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <!-- text/x-template使用技巧:反向呈现 换一种写法而已 -->
+    <script type="text/x-template" id="hnTemplate">
+        <h1>谁的
+            <hn-vue/>
+        </h1>
+
+
+
+
+    </script>
+    <style>
+        em {
+            color: red;
+        }
+        
+        strong {
+            color: blueviolet;
+        }
+    </style>
+    <script>
+        /* 定义全局组件 局部组件 */
+        /* 总部 */
+        const app = Vue.createApp({
+            /* 组建支持无限复用  <hnVue>或者<hn-vue>都行  极力支持 -<hn-vue>的形式取书写 */
+            template: `<div>
+                <A/>
+                <hr>
+                <B/><C/>
+                <hr>
+                <hn/>
+                <hr>
+                <hn-vue/></div>`
+        })
+
+
+        /* 组件声明 */
+        app.component('hn', {
+
+            template: '#hnTemplate'
+        })
+        app.component('A', {
+            template: `<em>我的</em><B/><C/>`
+        })
+        app.component('B', {
+            template: `<strong>你的</strong>`
+        })
+        app.component('C', {
+            template: `<b>他的</b>`
+        })
+        app.component('hnVue', {
+            template: `<div>胡海宁的vue</div>`
+        })
+
+        //mount最终挂载
+        app.mount('#app')
+    </script>
+</body>
+
+
+</html>

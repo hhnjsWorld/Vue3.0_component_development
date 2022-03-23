@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.0-beta.7/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- {{title}}-
+        <todo/> -->
+
+        <div v-for="todo in db" :key="todo.id">
+            {{todo.title}}
+        </div>
+
+        <!-- 下面视为父亲组件 父组件去渲染 -->
+
+        <div v-for="info in db">
+            <todo :父传子="info"></todo>
+        </div>
+    </div>
+
+    <script type="module">
+
+        import main from './main.js' //引入入口文件方法main.js // import App from './App.js' // 加后缀.js
+    </script>
+
+</body>
+
+</html>
